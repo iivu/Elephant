@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar'
 
 function TopBar(props){
     return (
-        <AppBar position="absolute" color="default">
+        <AppBar position="static" color="default">
             content
         </AppBar>
     )
