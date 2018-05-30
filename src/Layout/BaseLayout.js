@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import './BaseLayout.css'
-import TopBar from '../Components/TopBar/TopBar'
+import DrawerTopBar from '../Components/DrawerTopBar/DrawerTopBar'
 
 class BaseLayout extends Component {
   render() {
     return (
       <div className="base-layout">
-          <TopBar/>
+          <DrawerTopBar/>
       </div>
     )
   }
