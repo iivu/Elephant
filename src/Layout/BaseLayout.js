@@ -13,7 +13,7 @@ const {
     mainMarginBottom,
     mainMarginLeft,
     mainMarginRight,
-    mainMarginTop
+    mainMarginTop,
 } = AppConfig
 const styles = theme => ({
     flexBox:{
@@ -81,7 +81,7 @@ class BaseLayout extends Component {
                 <main className={classNames(classes.content,{
                     [classes[`contentShift-${drawerAnchor}`]]:isDrawerOpen,
                 })}>
-                    This is main content.
+                    <div>This is main content.</div>
                 </main>
             </div>
         )

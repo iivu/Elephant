@@ -18,12 +18,14 @@ const styles = theme => ({
 	},
     drawerPaper: {
         width: drawerWidth,
-		backgroundColor:'#000'
+		backgroundColor:'#eee'
     },
 	closeDrawerButton: {
-		color:'#fff',
+		color:'#000',
 	}
 })
+
+
 const MenuDrawer = (props) => {
 	const {isDrawerOpen,classes,onCloseMenu} = props
 	return (
