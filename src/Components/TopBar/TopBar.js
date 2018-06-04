@@ -6,10 +6,32 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import { withStyles } from '@material-ui/core/styles'
+import classNames from 'classnames'
 
-const styles = {
+import AppConfig  from '../../Config/index'
+
+
+const {drawerWidth,drawerAnchor} = AppConfig
+const styles =(theme) => ({
     appBarRoot: {
         boxShadow:'none',
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+    },
+	appBarShift:{
+    	width:`calc(100% - ${drawerWidth}px)`,
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+	},
+    'appBarShift-left': {
+        marginLeft: drawerWidth,
+    },
+    'appBarShift-right': {
+        marginRight: drawerWidth,
     },
     flexGrow: {
         flexGrow:1,
@@ -17,23 +39,29 @@ const styles = {
     iconButtonMargin:{
         marginRight:20,
     },
-}
+})
 
 const TopBar = (props) =>{
-	const { classes } = props
+	const { classes,onOpenMenu,onLogout, isDrawerOpen } = props
 	return (
-		<AppBar position="static" color="default" classes={{root:classes.appBarRoot}}>
+		<AppBar position="absolute" color="default" classes={{root:classes.appBarRoot}} className={classNames({
+            [classes.appBarShift]:isDrawerOpen,
+			[classes[`appBarShift-${drawerAnchor}`]]:isDrawerOpen,
+		})}>
 			<Toolbar>
-				<IconButton  aria-label="Menu" className={classes.iconButtonMargin} onClick={this.onMenuButtonClick}>
-					<MenuIcon/>
-				</IconButton>
+				{
+                    isDrawerOpen ? null :
+					(<IconButton  aria-label="Menu" className={classes.iconButtonMargin} onClick={onOpenMenu}>
+						<MenuIcon/>
+					</IconButton>)
+				}
 				<Typography variant="title" color="inherit" className={classes.flexGrow}>
 					Topbar
 				</Typography>
-				<Button variant="outlined">LOGOUT</Button>
+				<Button variant="outlined" onClick={onLogout}>LOGOUT</Button>
 			</Toolbar>
 		</AppBar>
 	)
 }
 
-export default withStyles(styles)(TopBar)
+export default withStyles(styles,{withTheme:true})(TopBar)
