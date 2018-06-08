@@ -63,7 +63,6 @@ class BaseLayout extends Component {
         console.log('logout')
     }
 
-
     render () {
         const {isDrawerOpen} = this.state
         const {classes} = this.props
