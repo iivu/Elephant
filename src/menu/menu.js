@@ -1,10 +1,16 @@
-
+import SendIcon from '@material-ui/icons/Send'
 
 
 const menuConfig = [
     {
         name:'menu1',
-        icon:'',
+        icon:SendIcon,
+        path:'',
+        children:[
+            {name:'cc',icon:SendIcon},
+            {name:'cc',icon:SendIcon},
+            {name:'cc',icon:SendIcon},
+        ],
     }
 ]
 

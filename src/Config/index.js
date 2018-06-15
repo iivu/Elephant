@@ -3,6 +3,7 @@ const AppConfig = {
     drawerWidth : 240,
     //抽屉菜单的位置
     drawerAnchor: 'left',
+    //主内容的margin
     mainMarginTop:80,
     mainMarginLeft:30,
     mainMarginRight:30,
