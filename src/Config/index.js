@@ -11,7 +11,7 @@ const APP_CONFIG = {
     mainMarginRight:30,
     mainMarginBottom:30,
     //菜单栏溢出表现
-    menuOverflow:'auto',
+    menuOverflow:'hidden',
 }
 
 export default APP_CONFIG
