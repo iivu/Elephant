@@ -8,10 +8,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { withStyles } from '@material-ui/core/styles'
 import classNames from 'classnames'
 
-import AppConfig  from '../../Config/index'
+import APP_CONFIG  from '../../Config/index'
 
 
-const {drawerWidth,drawerAnchor} = AppConfig
+const {drawerWidth,drawerAnchor} = APP_CONFIG
 const styles =(theme) => ({
     appBarRoot: {
         boxShadow:'none',
@@ -56,7 +56,7 @@ const TopBar = (props) =>{
 					</IconButton>)
 				}
 				<Typography variant="title" color="inherit" className={classes.flexGrow}>
-					Topbar
+                    {APP_CONFIG.title}
 				</Typography>
 				<Button variant="outlined" onClick={onLogout}>LOGOUT</Button>
 			</Toolbar>

@@ -3,7 +3,7 @@ import './BaseLayout.css'
 import TopBar from '../Components/TopBar/TopBar'
 import MenuDrawer from '../Components/MenuDrawer/MenuDrawer'
 import { withStyles } from '@material-ui/core/styles'
-import AppConfig from '../Config/index'
+import APP_CONFIG from '../Config/index'
 import classNames from 'classnames'
 
 
@@ -14,7 +14,8 @@ const {
     mainMarginLeft,
     mainMarginRight,
     mainMarginTop,
-} = AppConfig
+} = APP_CONFIG
+
 const styles = theme => ({
     flexBox:{
         display:'flex',
